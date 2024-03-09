@@ -14,9 +14,9 @@ tar_source("src/overlap_intersection.R")
 tar_source("src/processing_tools.R")
 
 # directories
-fire_path <- "/Users/jgoldman/Library/CloudStorage/OneDrive-UniversityofToronto/Data/quebec-disturbance-data/qc-fire-perims-shield-2.shp"
-defol_path <- "/Users/jgoldman/Library/CloudStorage/OneDrive-UniversityofToronto/Data/qc-data/clean-data/qc_sbw.shp"
-RES_DIR <- "/Users/jgoldman/Library/CloudStorage/OneDrive-UniversityofToronto/Data/qc-data/clean-data/"
+fire_path <- ""
+defol_path <- ""
+RES_DIR <- ""
 
 # Replace the target list below with your own:
 list(
