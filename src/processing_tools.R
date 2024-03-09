@@ -15,10 +15,6 @@ getData <- function(file){
   sf::read_sf(file)
 }
 
-
-
-
-
 clean_overlap <- function(data.d, data.nd){
   require(sf)
   require(tidyverse)
@@ -31,7 +27,7 @@ clean_overlap <- function(data.d, data.nd){
     pull(fire_id)
   
   data.d <- data.d |> 
-    filter(fire_id %in% non_defol_names)
+    filter(fire_id %in% non.defol.names)
   
   ################## ADD DEFOL COLUMN #############
   
@@ -65,15 +61,13 @@ clean_overlap <- function(data.d, data.nd){
 
 
 output_data <- function(data.list, df.name, RES_DIR){
-  
+  source("src/fire_area.R")
   if(df.name == "data.d"){
-    data <- data.list[names(data.list) = "data.d"]
-    data <- do.call(rbind, data)
+    data <- data.list[[2]]
     path <- paste0(RES_DIR, "defoliated_perimeters.shp")
-  } else if(df.name == "data.nd"){
     
-    data <- data.list[names(data.list) = "data.nd"]
-    data <- do.call(rbind, data)
+  } else if(df.name == "data.nd"){
+    data <- data.list[[1]]
     path <- paste0(RES_DIR, "non_defoliated_perimeters.shp")
     
   }
@@ -81,4 +75,18 @@ output_data <- function(data.list, df.name, RES_DIR){
   sf::write_sf(data, path)
   
 }
+
+setCrs <- function(df1, df2){
+  require(sf)
+  if(st_crs(df1) != st_crs(df2)){
+    crs.df1 <- st_crs(df1)
+    
+    df2 <- st_transform(df2, st_crs(crs.df1))
+    
+  }
+  
+  return(df2)
+  
+}
+
 
