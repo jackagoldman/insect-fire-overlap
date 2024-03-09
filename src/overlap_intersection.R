@@ -54,6 +54,10 @@ overlap_intersection <- function(fire,insect,max_year,min_year,year_gap){
   }
   
   
+  # make sure crs matches
+  insect <- setCrs(fire, insect)
+  
+
   # assume planar
   sf_use_s2(FALSE) 
   
@@ -106,10 +110,10 @@ overlap_intersection <- function(fire,insect,max_year,min_year,year_gap){
     mutate(cumltve_yrs= n()) |> 
     
     # calculate time since insect disturbance
-    mutate(tsd = max(insect_year)) |> 
+    mutate(tsd = as.numeric(max(insect_year))) |> 
     
     # caculate difference between time since disturbance and fire year
-    mutate(tsd = (fire_year - as.numeric(tsd)))
+    mutate(tsd = (as.numeric(fire_year) - as.numeric(tsd)))
  
   
   
