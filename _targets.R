@@ -18,13 +18,18 @@ fire_path <- ""
 defol_path <- ""
 RES_DIR <- ""
 
+#intersection years
+max.year <-  # ex. 2012
+min.year <-  # ex. 1970
+gap_year <-  # ex. 15
+
 # Replace the target list below with your own:
 list(
   tar_target(name = fire.file, fire_path, format = "file"),
   tar_target(name = fire.data, getData(fire.file)),
   tar_target(name = defol.file, defol_path, format = "file"),
   tar_target(name = defol.data, getData(defol.file)),
-  tar_target(intersection, overlap_intersection(fire.data, defol.data, 2012, 1970, 15)),
+  tar_target(intersection, overlap_intersection(fire.data, defol.data, max.year, min.year, gap)),
   tar_target(difference, overlap_difference(fire.data, intersection)),
   tar_target(data.int.v1, fire_area(intersection)),
   tar_target(data.diff.v1, fire_area(difference)),
