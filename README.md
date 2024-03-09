@@ -1,4 +1,4 @@
-Code for implementing quasi-experimental approach of paired design within fires that have areas that were affected and not affected by insect disturbance.
+Code for implementing quasi-experiment matched pairs design within fires that have areas that were affected and not affected by insect disturbance.
 
 Steps:
 
