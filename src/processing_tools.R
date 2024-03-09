@@ -35,11 +35,12 @@ clean_overlap <- function(data.d, data.nd){
   data.d.length.out <- nrow(data.d)
   data.nd.length.out <- nrow(data.nd)
   data.length.in <- 1
+  data.length.in.nd <- 0
   
   data.d <-  data.d |> 
     mutate(defoliated = rep(data.length.in,data.d.length.out))
   data.nd <- data.nd |> 
-    mutate(defoliated = rep(data.length.in, data.nd.length.out))
+    mutate(defoliated = rep(data.length.in.nd, data.nd.length.out))
   
   # relocate geo column
   
@@ -54,9 +55,34 @@ clean_overlap <- function(data.d, data.nd){
   data.nd <-  data.nd |> 
     st_transform(st_crs(data.d))
   
+  # change crs to wgs 
+  data.nd <- st_transform(data.nd, 4326)
+  data.d <- st_transform(data.d, 4326)
+  
+
+  
   data <- list(data.nd, data.d)
   
   return(data)
+}
+
+
+clean_names <- function(x){
+  if("fire_year" %in% colnames(x)){
+    x <- rename(x, Fire_Year = fire_year)
+  }
+  if("fire_id" %in% colnames(x)){
+    x <- rename(x, Fire_ID = fire_id)
+  }
+  if("cmltve_yrs" %in% colnames(x)){
+    x <- rename(x, cumltve_yrs = cmltve_yrs)
+  }
+  if("defoliated" %in% colnames(x)){
+    x <- rename(x, defoliated = defoliated)
+  }
+  
+  return(x)
+  
 }
 
 
@@ -65,10 +91,11 @@ output_data <- function(data.list, df.name, RES_DIR){
   if(df.name == "data.d"){
     data <- data.list[[2]]
     path <- paste0(RES_DIR, "defoliated_perimeters.shp")
-    
+    data <- clean_names(data)
   } else if(df.name == "data.nd"){
     data <- data.list[[1]]
     path <- paste0(RES_DIR, "non_defoliated_perimeters.shp")
+    data <- clean_names(data)
     
   }
   
