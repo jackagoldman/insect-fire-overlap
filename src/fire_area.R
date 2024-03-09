@@ -17,7 +17,7 @@ fire_area <- function(x){
   
   # make sure it is an sf object
   if(!is(x, "sf")) {
-    warning("Y has to be a spatial object - converting to sf ")
+    warning("Y has to be a spatial object - converting to sf")
   x <- sf::st_as_sf(x)
   }
   

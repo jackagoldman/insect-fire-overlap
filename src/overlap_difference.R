@@ -35,7 +35,7 @@ overlap_difference <- function(fr, d_fr){
     #select only the rows required from each dataframe
     # original
     og_fr <- og_fr |> 
-      select(c("Fire_ID", "geometry")) |> 
+      select(c("Fire_ID", "Fire_Year", "geometry")) |> 
       rename(fire_id = Fire_ID)
     
     # transform geometry to planar from geodesic
@@ -43,7 +43,7 @@ overlap_difference <- function(fr, d_fr){
     defol_fr <- st_transform(defol_fr, "+proj=eqc")
     
     # calculate the difference between og_fr and defolaited area fr
-    difference <- st_difference(og_fr, defol_fr) |> select(c(fire_id))
+    difference <- st_difference(og_fr, defol_fr) |> select(c(fire_id, Fire_Year))
     
     # If the row in difference is not empty, put difference output into the list
     # if the row is empty, skip it and continue with loop
