@@ -1,5 +1,19 @@
-Insect-fire-overlap
+Code for implementing quasiexperimental approach of paired design within fires that have both areas that were affected and non affected by insect disturbance.
 
+Steps:
+
+- Fork this repository (Github docs)
+
+- update the _targets.R file to include paths to files under the directories subheader 
+  - fire_path <- "<path/to/my/fire/shpfile>"
+  - defol_path <- "<path/to/my/insect/shpfile>"
+  - RES_DIR <- "<path/to/my/results/folder>"
+
+- update the _targets.R file to input the max, min and gap year for intersection function.
+
+- **make sure to save targets file**
+
+- Run the pipeline, using tar_make() from the targets package
 
 
 
