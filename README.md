@@ -4,6 +4,8 @@ Steps:
 
 - Fork this repository (Github docs)
 
+- run `renv::restore()` to reproduce `r` environment
+
 - update the _targets.R file to include paths to files under the directories subheader 
   - fire_path <- "<path/to/my/fire/shpfile>"
   - defol_path <- "<path/to/my/insect/shpfile>"
