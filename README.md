@@ -15,7 +15,7 @@ Steps:
 
 - **make sure to save targets file**
 
-- Run the pipeline, using tar_make() from the targets package
+- Run the pipeline, using `tar_make()` from the targets package
 
 
 
