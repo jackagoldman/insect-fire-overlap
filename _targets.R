@@ -29,7 +29,7 @@ list(
   tar_target(name = fire.data, getData(fire.file)),
   tar_target(name = defol.file, defol_path, format = "file"),
   tar_target(name = defol.data, getData(defol.file)),
-  tar_target(intersection, overlap_intersection(fire.data, defol.data, max.year, min.year, gap)),
+  tar_target(intersection, overlap_intersection(fire.data, defol.data, max.year, min.year, gap_year)),
   tar_target(difference, overlap_difference(fire.data, intersection)),
   tar_target(data.int.v1, fire_area(intersection)),
   tar_target(data.diff.v1, fire_area(difference)),
