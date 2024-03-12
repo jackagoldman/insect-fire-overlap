@@ -3,7 +3,7 @@
 #' This function gets the difference between the union for each fire (all area defoliated) and the full fire perimeter
 #'
 #' @param fr original fire perimeters. Dataframe must have a valid geometry column and a Fire_ID column
-#' @param d_fr defoliated portion of the fire perimeters. Dataframe must have a valid geometry column and a Fire_ID column that matches fr Fire_ID column
+#' @param d_fr defoliated portion of the fire perimeters. Dataframe must have a valid geometry column and a fire_id (lowercase) column that matches fr Fire_ID column
 #'
 #' @return dataframe consisting only of fires that were partially defoliated. Dataframes have a fire_id and geometry column
 #' 
