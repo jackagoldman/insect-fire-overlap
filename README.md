@@ -2,7 +2,7 @@ Code for implementing quasi-experiment matched pairs design within fires that ha
 
 Steps:
 
-- Fork this repository (Github docs)
+- Fork this repository [Github docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
 
 - run `renv::restore()` to reproduce `r` environment
 
