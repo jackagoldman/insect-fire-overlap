@@ -13,7 +13,7 @@ Steps:
 
 - update the _targets.R file to input the max, min and gap year for intersection function.
 
-- **make sure to save targets file**
+- **make sure to save _targets.R file after every change**
 
 - Run the pipeline, using `tar_make()` from the targets package
 
