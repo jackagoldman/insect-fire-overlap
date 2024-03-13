@@ -18,9 +18,10 @@ Steps:
 - Run the pipeline, using `tar_make()` from the targets package
 
 
-**NOTES**
-Fire polygon shapefile must have column `Fire_ID`, `Fire_Year` (both case sensitive) and a geometry column. It is recommended that you remove all other columns. 
-Insect disturbance shapefile must have a `Year` column with **one** row per year, and a geometry column. It is recommended that you remove all other columns.
+**NOTES:**
+
+- Fire polygon shapefile must have column `Fire_ID`, `Fire_Year` (both case sensitive) and a geometry column. It is recommended that you remove all other columns. 
+- Insect disturbance shapefile must have a `Year` column with **one** row per year, and a geometry column. It is recommended that you remove all other columns.
 
 
 
