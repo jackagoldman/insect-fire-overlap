@@ -18,6 +18,10 @@ overlap_difference <- function(fr, d_fr){
   # create empty list
   non_defol_vec <- list()
   
+  # make fire st object valie
+  d_fr <- st_make_valid(d_fr)
+  fr <- st_make_valid(fr)
+  
   # loop through each fire in defoliated fires
   for (i in 1:nrow(d_fr)){
     
