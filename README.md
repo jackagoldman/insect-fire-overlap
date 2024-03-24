@@ -1,5 +1,9 @@
 Code for implementing quasi-experiment matched pairs design within fires that have areas that were affected and not affected by insect disturbance.
 
+![Static Badge](https://img.shields.io/badge/dependencies-rgee_reticulate_sf-purple?style=plastic) ![Static Badge](https://img.shields.io/badge/repo_status-active-%2332CD32?style=plastic)
+
+
+
 Steps:
 
 - Fork this repository [Github docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
